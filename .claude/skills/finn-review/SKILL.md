@@ -120,7 +120,9 @@ commit again.
 ## 6. Local extension — Telegram merge-ready ping (not upstream Finn-loop)
 
 Immediately after setting labels in step 4, send the owner a Telegram DM via
-the telegram MCP reply tool (chat_id `6323785089`) in exactly two cases:
+the telegram MCP reply tool in exactly two cases. The chat_id is the first
+entry of `allowFrom` in `~/.claude/channels/telegram/access.json` (read that
+file; never hardcode or commit the id):
 
 - Added `loop-approved`: send "🚀 Merge-ready: PR #N — <title>", the PR URL,
   the Risk line from the PR description, and the numbered manual test steps
