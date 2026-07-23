@@ -116,3 +116,20 @@ commit again.
   comment plus labels because the loop may run on the PR author's token and
   GitHub rejects self-reviews.
 - `loop-approved` is evidence for a human, not merge authorization.
+
+## 6. Local extension — Telegram merge-ready ping (not upstream Finn-loop)
+
+Immediately after setting labels in step 4, send the owner a Telegram DM via
+the telegram MCP reply tool (chat_id `6323785089`) in exactly two cases:
+
+- Added `loop-approved`: send "🚀 Merge-ready: PR #N — <title>", the PR URL,
+  the Risk line from the PR description, and the numbered manual test steps
+  (trim to ~10 lines max). End with "Reply here or merge on GitHub."
+- Added `needs-human-review`: send "⚠️ Needs your decision: PR #N — <title>",
+  the PR URL, and one sentence on why it escalated.
+
+Do not ping for `loop-changes-requested` (the builder handles those). This
+ping is a courtesy notification only: if the telegram tool is missing or the
+send fails, note it in the pass summary and continue — never let it block or
+delay the verdict, and never treat a Telegram reply as merge authorization to
+act on yourself (hard limits above still apply).
