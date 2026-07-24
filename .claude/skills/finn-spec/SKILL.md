@@ -86,8 +86,13 @@ Rules for the draft:
 
 Show the full draft in chat and get the user's go-ahead. Then create the
 issue on the configured `FIR` Linear team (via the Linear connector) with
-the draft as the body. Report the exact issue identifier and URL returned by
-Linear; later skills use that identifier rather than guessing it.
+the draft as the body **and the label `repo:loop-lab`**. Report the exact
+issue identifier and URL returned by Linear; later skills use that identifier
+rather than guessing it.
+
+The repo label is required, not optional: one Linear team serves every loop
+project, and the label is how `finn-build` knows this issue is its work rather
+than another repo's. An unlabeled issue will never be picked up.
 
 ## Hard rule
 

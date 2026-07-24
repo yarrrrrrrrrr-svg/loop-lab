@@ -47,6 +47,9 @@ iteration from retrying a decision only a human can make.
 Using the Linear connector, list issues on team `FIR` that meet every
 condition:
 
+- labeled `repo:loop-lab` (mandatory — one Linear team serves every loop
+  project, and this label is what keeps this builder from claiming another
+  repo's work; never work an issue that lacks it)
 - labeled `agent-ready`
 - unassigned
 - not labeled `blocked`
